@@ -100,7 +100,7 @@ function createRow5(tableRowValues) {
 
   const td1 = document.createElement('td');
   const img = document.createElement('img')
-  img.src = 'https://docs.google.com/uc?id=1NsZgeVAE18uZun5bBU8dmpmLMZCOgin_';
+  img.src = 'images/Tesouros.png';
   img.width = '25';
   img.height = '25';
   td1.appendChild(img);
