@@ -2,3 +2,5 @@
 title
 name
 date
+created_at
+id
