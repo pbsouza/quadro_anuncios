@@ -1,4 +1,4 @@
-﻿day
+date
 week
 president
 counselorClassB

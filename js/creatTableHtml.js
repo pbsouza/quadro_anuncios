@@ -66,7 +66,7 @@ function createRow3(tableRowValues) {
   tr3.appendChild(td3);
 
   const td4 = document.createElement('td');
-  td4.textContent = tableRowValues[11];
+  td4.textContent = tableRowValues[5];
   tr3.appendChild(td4);
 
   return tr3;
@@ -78,7 +78,7 @@ function createRow4(tableRowValues) {
 
   const td1 = document.createElement('td');
   td1.className = 'hour';
-  td1.textContent = tableRowValues[4];
+  td1.textContent = tableRowValues[6];
   tr4.appendChild(td1);
 
   const td2 = document.createElement('td');
@@ -124,6 +124,106 @@ function createRow5(tableRowValues) {
   return tr5;
 }
 
+function createRow6(tableRowValues) {
+  const tr6 = document.createElement('tr');
+  tr6.className = 'session-treasures-itens-color';
+
+  const td1 = document.createElement('td');
+  td1.className = 'hour';
+  td1.textContent = tableRowValues[7];
+  tr6.appendChild(td1);
+
+  const td2 = document.createElement('td');
+  td2.textContent = 'Tesouros da palavra de Deus: (10 min)';
+  tr6.appendChild(td2);
+
+  const td3 = document.createElement('td');
+  tr6.appendChild(td3);
+
+  const td4 = document.createElement('td');
+  td4.textContent = tableRowValues[8];
+  tr6.appendChild(td4);
+
+  return tr6;
+}
+
+function createRow7(tableRowValues) {
+  const tr7 = document.createElement('tr');
+  tr7.className = 'session-treasures-itens-color';
+
+  const td1 = document.createElement('td');
+  td1.className = 'hour';
+  td1.textContent = tableRowValues[9];
+  tr7.appendChild(td1);
+
+  const td2 = document.createElement('td');
+  td2.textContent = 'Joias espirituais: (10 min)';
+  tr7.appendChild(td2);
+
+  const td3 = document.createElement('td');
+  tr7.appendChild(td3);
+
+  const td4 = document.createElement('td');
+  td4.textContent = tableRowValues[10];
+  tr7.appendChild(td4);
+
+  return tr7;
+}
+
+function createRow8(tableRowValues) {
+  const tr8 = document.createElement('tr');
+  tr8.className = 'session-treasures-itens-color';
+
+  const td1 = document.createElement('td');
+  td1.className = 'hour';
+  td1.textContent = tableRowValues[11];
+  tr8.appendChild(td1);
+
+  const td2 = document.createElement('td');
+  td2.textContent = 'Leitura da Bíblia: (4 min)';
+  tr8.appendChild(td2);
+
+  const td3 = document.createElement('td');
+  td3.textContent = tableRowValues[12];
+  tr8.appendChild(td3);
+
+  const td4 = document.createElement('td');
+  td4.textContent = tableRowValues[13];
+  tr8.appendChild(td4);
+
+  return tr8;
+}
+
+function createRow9(tableRowValues) {
+  const tr9 = document.createElement('tr');
+  tr9.className = 'session-make-title-color';
+
+  const td1 = document.createElement('td');
+  const img = document.createElement('img')
+  img.src = 'images/faca_seu_ melhor.png';
+  img.width = '25';
+  img.height = '25';
+  td1.appendChild(img);
+  tr9.appendChild(td1);
+
+  const td2 = document.createElement('td');
+  td2.className = 'session-title';
+  td2.textContent = 'FAÇA SEU MELHOR NO MINISTÉRIO';
+  tr9.appendChild(td2);
+
+  const td3 = document.createElement('td');
+  td3.className = 'session-title-roms';
+  td3.textContent = 'Sala B';
+  tr9.appendChild(td3);
+
+  const td4 = document.createElement('td');
+  td4.className = 'session-title-roms';
+  td4.textContent = 'Salão Principal';
+  tr9.appendChild(td4);
+
+  return tr9
+}
+
 export function createTableWithRow(tableRowValues) {
   const table = document.createElement('table');
   table.className = 'tbl-week';
@@ -132,11 +232,19 @@ export function createTableWithRow(tableRowValues) {
   const tr3 = createRow3(tableRowValues);
   const tr4 = createRow4(tableRowValues);
   const tr5 = createRow5(tableRowValues);
+  const tr6 = createRow6(tableRowValues);
+  const tr7 = createRow7(tableRowValues);
+  const tr8 = createRow8(tableRowValues);
+  const tr9 = createRow9(tableRowValues);
   table.appendChild(tr1);
   table.appendChild(tr2);
   table.appendChild(tr3);
   table.appendChild(tr4);
   table.appendChild(tr5);
+  table.appendChild(tr6);
+  table.appendChild(tr7);
+  table.appendChild(tr8);
+  table.appendChild(tr9);
 
   return table;
 }
