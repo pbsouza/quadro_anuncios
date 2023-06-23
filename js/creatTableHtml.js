@@ -1,4 +1,4 @@
-export function createTableRow(date, description, president, name) {
+export function createRow1(date, description, president, name) {
   const tr = document.createElement('tr');
   tr.className = 'first-row';
 
@@ -29,8 +29,7 @@ export function createTableRow(date, description, president, name) {
 export function createTableWithRow(date, description, president, name) {
   const table = document.createElement('table');
   table.className = 'tbl-week';
-
-  const tr = createTableRow(date, description, president, name);
+  const tr = createRow1(date, description, president, name);
   table.appendChild(tr);
 
   return table;

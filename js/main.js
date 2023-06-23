@@ -15,19 +15,15 @@ async function readAttributesFile() {
     console.log(attributeNames)
     return attributeNames;
   }
-  
-  
-  
-  
+    
   // Chama a função para ler o arquivo e processar os atributos
   run().then(dataTable => {
     readAttributesFile().then(attributeNames => {
       // Itera sobre os objetos dentro do array
       dataTable.forEach(item => {
         const tableRowValues = attributeNames.map(attributeName => item[attributeName]);
-  
-        const tableRow = createTableWithRow(...tableRowValues);
-  
+        const selectedValues = tableRowValues.slice(0, 4);
+        const tableRow = createTableWithRow(...selectedValues);
         const table = document.querySelector('div');
         table.appendChild(tableRow);
       });
