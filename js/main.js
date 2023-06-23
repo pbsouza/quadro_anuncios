@@ -1,32 +1,28 @@
 import { getFilesTable } from './filesTable.js';
 import {createTableWithRow} from './creatTableHtml.js';
 
+// Função para ler o arquivo de atributos
+async function readAttributesFile() {
+  const response = await fetch('js/data/attributes.txt');
+  const text = await response.text();
+  const attributeNames = text.trim().split('\n').map(line => line.trim().split(';')).flat();
+  console.log(attributeNames)
+  return attributeNames;
+}
+
 async function run() {
     const data = await getFilesTable(); // Chama a função e recebe o valor de 'data'
     console.log(data); // Imprime o valor de 'data' na outra função
     return data;
   }
 
-// Função para ler o arquivo de atributos
-async function readAttributesFile() {
-    const response = await fetch('js/data/attributes.txt');
-    const text = await response.text();
-    const attributeNames = text.trim().split('\n').map(line => line.trim().split(';')).flat();
-    console.log(attributeNames)
-    return attributeNames;
-  }
-  //Variaves para definir o indice da tableRowValues.slice(ind1, ind2);
-  let ind1 = 0;
-  let ind2 = 4;
-    
-  // Chama a função para ler o arquivo e processar os atributos
+// Chama a função para ler o arquivo e processar os atributos
   run().then(dataTable => {
     readAttributesFile().then(attributeNames => {
       // Itera sobre os objetos dentro do array
       dataTable.forEach(item => {
         const tableRowValues = attributeNames.map(attributeName => item[attributeName]);
-        const selectedValues = tableRowValues.slice(ind1, ind2);
-        const tableRow = createTableWithRow(selectedValues);
+        const tableRow = createTableWithRow(tableRowValues);
         const table = document.querySelector('div');
         table.appendChild(tableRow);
       });
@@ -37,10 +33,5 @@ async function readAttributesFile() {
     console.error('Erro:', error);
   });
   
-
-
-
-
-
 
 

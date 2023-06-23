@@ -4,3 +4,9 @@ name
 date
 created_at
 id
+title
+assistant
+bible_reading
+initial_call
+return_visit
+talk
