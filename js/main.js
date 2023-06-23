@@ -1,5 +1,5 @@
 import { getFilesTable } from './filesTable.js';
-import {createTableRow} from './creatTableHtml.js';
+import {createTableWithRow} from './creatTableHtml.js';
 
 async function run() {
     const data = await getFilesTable(); // Chama a função e recebe o valor de 'data'
@@ -7,24 +7,33 @@ async function run() {
     return data;
   }
 
-run().then(dataTable => {
-    // Itera sobre os objetos dentro do array
-    dataTable.forEach(item => {
-        let date = item.id;
-        let description = item.created_at;
-        let president = item.title;
-        let name = item.hour;
-        
-        const tableRow = createTableRow(date, description, president, name);
-
+// Função para ler o arquivo de atributos
+async function readAttributesFile() {
+    const response = await fetch('data/attributes.txt');
+    const text = await response.text();
+    const attributeNames = text.trim().split('\n');
+    return attributeNames;
+  }
+  
+  // Chama a função para ler o arquivo e processar os atributos
+  run().then(dataTable => {
+    readAttributesFile().then(attributeNames => {
+      // Itera sobre os objetos dentro do array
+      dataTable.forEach(item => {
+        const tableRowValues = attributeNames.map(attributeName => item[attributeName]);
+  
+        const tableRow = createTableWithRow(...tableRowValues);
+  
         const table = document.querySelector('div');
         table.appendChild(tableRow);
+      });
+    }).catch(error => {
+      console.error('Erro ao ler o arquivo de atributos:', error);
     });
-}).catch(error => {
+  }).catch(error => {
     console.error('Erro:', error);
-});
+  });
   
-
 
 
 
