@@ -3,18 +3,296 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consulta à API do Supabase</title>
+  <title>Inserir Designações</title>
 </head>
 <body>
-    <div>
-        <nav>
-          <ul>
-            <li><a href="page02.html">INSERIR DESIGNAÇÕES</a></li>
-            
-            <li><a href="page01.html">VISUALIZAR DESIGNAÇÕES</a></li>
-          </ul>
-        </nav>
+    <style>
+        .col-1 {
+            height: 20px;
+            max-width: 50px;
+            font-size: 10px;
+            border: none;
+            border-radius: 3px;
+            opacity: 0.65;
+            font-weight: bold;
+            text-align: center;
+            color: #353535;
+        }
+
+        .col-2 {
+            height: 20px;
+            width: 100%;
+            max-width: 385px;
+            font-size: 10px;
+            border: none;
+            border-radius: 3px;
+            opacity: 0.65;
+        }
+
+        .col-4 {
+            height: 20px;
+            width: 100%;
+            max-width: 145px;
+            font-size: 10px;
+            border: none;
+            border-radius: 3px;
+            opacity: 0.65;
+        }
+
+        .tbl-week {
+          max-width: 800px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 10px;
+        }
+  
+        .tbl-week td {
+          padding: 5px;
+        }
+  
+        .tbl-week td:nth-child(1) {
+          width: 5%;
+          text-align: center;
+        }
+  
+        .tbl-week td:nth-child(2) {
+          width: 50%;
+          text-align: left;
+        }
+  
+        .tbl-week td:nth-child(3) {
+          width: 20%;
+          text-align: left;
+        }
+  
+        .tbl-week td:nth-child(4) {
+          width: 20%;
+          text-align: left;
+        }
+  
+        .col3-right {
+          text-align: right !important;
+          font-size: 8px;
+          font-weight: bold;
+          color: #7b7b7b;
+        }
+  
+        .hour {
+          font-size: 9px;
+          font-weight: bold;
+          color: #7b7b7b;
+        }
+  
+        .session-title {
+          padding: 4px 4px 4px 13px !important;
+          height: 25px;
+          text-align: left !important;
+          font-size: 10px;
+          font-weight: bold;
+        }
+  
+        .divisor-row {
+          height: 35px;
+        }
+  
+        .first-row {
+          background-color: #cba4eb;
+          color: #353535;
+          height: 35px;
+        }
+  
+        .start-end-color {
+          background-color: #ece2f4;
+          color: #353535;
+        }
+  
+        .session-treasures-title-color {
+          background-color: #656164;
+          color: #ebebeb;
+        }
+  
+        .session-treasures-itens-color {
+          background-color: rgba(232, 232, 232, 0.899);
+          color: #353535;
+        }
+  
+        .session-title-roms {
+          font-size: 10px;
+          font-weight: bold;
+        }
+  
+        .session-make-title-color {
+          background-color: #c78908;
+          color: #ebebeb;
+        }
+  
+        .session-make-itens-color {
+          background-color: #f0e1bf;
+          color: #353535;
+        }
+  
+        .session-life-title-color {
+          background-color: #99131f;
+          color: #ebebeb;
+        }
+  
+        .session-life-itens-color {
+          background-color: #f5dbdd;
+          color: #353535;
+        }
+      </style>
+      <div class="container-week">
+        <table class="tbl-week">
+          <tr class="first-row">
+            <td><input type="text" name="day" class="col-1" placeholder="Data" maxlength="10" oninput="formatDateInput(this)"></td>
+            <td><input type="text" name="week" class="col-2" id="week" placeholder="Semana" style="font-weight: bold; color: #353535;"></td>
+            <td class="col3-right">Presidente:</td>
+            <td><input type="text" name="president" class="col-4"></td>
+          </tr>
+          <tr class="start-end-color">
+            <td></td>
+            <td></td>
+            <td class="col3-right">Conselheiro da sala B:</td>
+            <td><input type="text" name="counselorClassB" class="col-4"></td>
+          </tr>
+          <tr class="start-end-color">
+            <td><input type="text" name="hourStart" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td>Cântico inicial</td>
+            <td class="col3-right">Oração inicial:</td>
+            <td><input type="text" name="initialPrayer" class="col-4"></td>
+          </tr>
+          <tr class="start-end-color">
+            <td class="hour"><input type="text" name="hourOpeningComments" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td>Comentários iniciais</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="session-treasures-title-color">
+            <td>
+              <img
+                src="../images/Tesouros.png"
+                width="25"
+                height="25"
+              />
+            </td>
+            <td class="session-title">TESOUROS DA PALAVRA DE DEUS</td>
+            <td class="session-title-roms">Sala B</td>
+            <td class="session-title-roms">Salão Principal</td>
+          </tr>
+          <tr class="session-treasures-itens-color">
+            <td class="hour"><input type="text" name="hourTreasures" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td>Tesouros da palavra de Deus: (10 min)</td>
+            <td></td>
+            <td><input type="text" name="counselorClassB" class="col-4"></td>
+          </tr>
+          <tr class="session-treasures-itens-color">
+            <td class="hour"><input type="text" name="hourGems" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td>Joias espirituais: (10 min)</td>
+            <td></td>
+            <td><input type="text" name="nameGems" class="col-4"></td>
+          </tr>
+          <tr class="session-treasures-itens-color">
+            <td class="hour"><input type="text" name="hourReading" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td>Leitura da Bíblia: (4 min)</td>
+            <td><input type="text" name="nameReadingHallB" class="col-4"></td>
+            <td><input type="text" name="nameReadingMainHall" class="col-4"></td>
+          </tr>
+          <tr class="session-make-title-color">
+            <td>
+              <img
+                src="../images/faca_seu_ melhor.png"
+                width="25"
+                height="25"
+              />
+            </td>
+            <td class="session-title">FAÇA SEU MELHOR NO MINISTÉRIO</td>
+            <td class="session-title-roms">Sala B</td>
+            <td class="session-title-roms">Salão Principal</td>
+          </tr>
+          <tr class="session-make-itens-color">
+            <td class="hour"><input type="text" name="hourMakeDesignation1" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td><input type="text" name="titleMakeDesignation1" class="col-2"></td>
+            <td><input type="text" name="nameMakeDesignation1A" class="col-4"></td>
+            <td><input type="text" name="nameMakeDesignation1B" class="col-4"></td>
+          </tr>
+          <tr class="session-make-itens-color">
+            <td class="hour"><input type="text" name="hourMakeDesignation2" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td><input type="text" name="titleMakeDesignation2" class="col-2"></td>
+            <td><input type="text" name="nameMakeDesignation2A" class="col-4"></td>
+            <td><input type="text" name="nameMakeDesignation2B" class="col-4"></td>
+          </tr>
+          <tr class="session-make-itens-color">
+            <td class="hour"><input type="text" name="hourMakeDesignation3" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td><input type="text" name="titleMakeDesignation3" class="col-2"></td>
+            <td><input type="text" name="nameMakeDesignation3A" class="col-4"></td>
+            <td><input type="text" name="nameMakeDesignation3B" class="col-4"></td>
+          </tr>
+          <tr class="session-life-title-color">
+            <td>
+              <img
+                src="../images/nossa_vida.png"
+                width="25"
+                height="25"
+              />
+            </td>
+            <td class="session-title">VIDA CRISTÃ</td>
+            <td class="session-title-roms">Leitor</td>
+            <td class="session-title-roms">Salão Principal</td>
+          </tr>
+          <tr class="session-life-itens-color">
+            <td class="hour"><input type="text" name="hourLifeDesignation1" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td><input type="text" name="titleLifeDesignation1" class="col-2"></td>
+            <td></td>
+            <td><input type="text" name="nameLifeDesignation1" class="col-4"></td>
+          </tr>
+          <tr class="session-life-itens-color">
+            <td class="hour"><input type="text" name="hourLifeDesignation2" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td><input type="text" name="titleLifeDesignation2" placeholder="USE SOMENTE SE HOUVER UMA SEGUNDA PARTE ANTES DO ESTUDO BIBLICO" class="col-2"></td>
+            <td></td>
+            <td><input type="text" name="nameLifeDesignation2" class="col-4"></td>
+          </tr>
+          <tr class="session-life-itens-color">
+            <td class="hour"><input type="text" name="hourCongStudy" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td>Estudo bíblico de congregação: (30 min)</td>
+            <td><input type="text" name="readerCongStudy" class="col-4"></td>
+            <td><input type="text" name="leaderCongStudy" class="col-4"></td>
+          </tr>
+          <tr class="start-end-color">
+            <td class="hour"><input type="text" name="hourConcludingComments" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td>Comentários finais</td>
+            <td></td>
+            <td><input type="text" name="nameConcludingComments" class="col-4"></td>
+          </tr>
+          <tr class="start-end-color">
+            <td class="hour"><input type="text" name="hourFinalPrayer" class="col-1" maxlength="4" oninput="formatHourInput(this)"></td>
+            <td>Cântico final e oração</td>
+            <td></td>
+            <td><input type="text" name="nameFinalPrayer" class="col-4"></td>
+          </tr>
+        </table>
       </div>
 </body>
-<script src="js/main.js" type="module"></script>
+
+<script>
+    function formatDateInput(input) {
+        // Remove caracteres que não são dígitos
+        let value = input.value.replace(/\D/g, '');
+  
+        // Aplica a máscara no formato dd/mm/aaaa
+        if (value.length > 0) {
+            value = value.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
+        }
+  
+        // Limita o número de caracteres em 8
+        input.value = value.substr(0, 10);
+    }
+
+    function formatHourInput(input) {
+        let value = input.value.replace(/\D/g, '');
+        if (value.length > 0) {
+            value = value.replace(/(\d{2})(\d{2})/, '$1:$2')
+        }
+
+        input.value = value.substr(0, 5)
+    }
+</script>
 </html>
