@@ -100,7 +100,7 @@ function createRow5(tableRowValues) {
 
   const td1 = document.createElement('td');
   const img = document.createElement('img')
-  img.src = 'images/Tesouros.png';
+  img.src = '../images/Tesouros.png';
   img.width = '25';
   img.height = '25';
   td1.appendChild(img);
@@ -200,7 +200,7 @@ function createRow9(tableRowValues) {
 
   const td1 = document.createElement('td');
   const img = document.createElement('img')
-  img.src = 'images/faca_seu_ melhor.png';
+  img.src = '../images/faca_seu_ melhor.png';
   img.width = '25';
   img.height = '25';
   td1.appendChild(img);
@@ -302,7 +302,7 @@ function createRow13(tableRowValues) {
 
   const td1 = document.createElement('td');
   const img = document.createElement('img')
-  img.src = 'images/nossa_vida.png';
+  img.src = '../images/nossa_vida.png';
   img.width = '25';
   img.height = '25';
   td1.appendChild(img);
