@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quadro Anuncios</title>
     <script>
+      
       if (window.innerWidth > 768) {
         // É um dispositivo móvel, redirecionar para a página móvel
         window.location.href = 'index.html';
       }
+
+      
     </script>
+    <script src="../quadro_anuncios/js/mainMobile.js" type="module"></script>
+
 </head>
 
 <style>
@@ -245,14 +250,18 @@ main {
 
 <body>
     <main>
+      <div id="selector">
+        <button id="offIndex">Anterior</button>
+        <button id="incrementIndex">Próxima</button>
+      </div>
       <div class="date-week">
-        <span class="row-border"><strong>04/01/2023</strong></span>
-        <span class="row-border"><strong>Semana 01-07 de janeiro</strong></span>
+        <span class="row-border"><strong id="day"></strong></span>
+        <span class="row-border"><strong id="week"></strong></span>
       </div>
       
       <div class="start-row">
         <div class="first-left-container">
-          <span class="row-border"><strong>Presidente: </strong>Pedro</span>
+          <span class="row-border"><strong>Presidente: </strong> <span id="president"></span> </span>
           <span class="row-border"><strong>Conselheiro Sala B: </strong>Everaldo</span>
         </div>
       </div>
@@ -521,4 +530,7 @@ main {
     </main>
   
 </body>
+
+
+
 </html>

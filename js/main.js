@@ -1,13 +1,10 @@
 import { getFilesTable } from './filesTable.js';
 import {createTableWithRow} from './creatTableHtml.js';
-import { addData } from './filesTable.js';
 
-// Função para ler o arquivo de atributos
 async function readAttributesFile() {
   const response = await fetch('../js/data/attributes.txt');
   const text = await response.text();
   const attributeNames = text.trim().split('\n').map(line => line.trim().split(';')).flat();
-  console.log(attributeNames)
   return attributeNames;
 }
 
