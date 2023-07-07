@@ -1,0 +1,6 @@
+//funcao para criar um objeto com uma sequencia determinada de arrays
+datasEspecificas = [];
+if (indice !== -1) {
+    datasEspecificas = data.slice(indice -6, indice +6).filter(objeto => objeto !== undefined);
+    console.log(datasEspecificas);
+}

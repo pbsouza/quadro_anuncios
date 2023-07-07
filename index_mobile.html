@@ -208,7 +208,7 @@ main {
 
 .assignment{
   display: flex;
-  padding: 5px;
+  padding: 3px;
   flex-grow: 1;
   justify-content: center;
 }
@@ -255,33 +255,33 @@ main {
         <button id="incrementIndex">Próxima</button>
       </div>
       <div class="date-week">
-        <span class="row-border"><strong id="day"></strong></span>
-        <span class="row-border"><strong id="week"></strong></span>
+        <span class="row-border"><strong id="day">Data</strong></span>
+        <span class="row-border"><strong>Semana de </strong><strong id="week"></strong></span>
       </div>
       
       <div class="start-row">
         <div class="first-left-container">
           <span class="row-border"><strong>Presidente: </strong> <span id="president"></span> </span>
-          <span class="row-border"><strong>Conselheiro Sala B: </strong>Everaldo</span>
+          <span class="row-border"><strong>Conselheiro Sala B: </strong> <span id="counselorClassB"></span></span>
         </div>
       </div>
       
       <div class="start-end-row">
         <div class="container-left">
-          <span><strong>19:30</strong></span>
+          <span><strong id="hourStart">00:00</strong></span>
         </div>
         <div class="container-right">
           <div >
             <span><strong>Cântico inicial</strong></span>
           </div>
           <div class="prayer">
-            <span><strong>Oração: </strong>Pedro Souza</span>
+            <span><strong>Oração: </strong><span id="initialPrayer"></span></span>
           </div>
         </div>
       </div>
         <div class="start-end-row">
           <div class="container-left">
-            <span><strong>19:35</strong></span>
+            <span><strong id="hourOpeningComments">00:00</strong></span>
           </div>
           <div class="container-right">
             <div>
@@ -301,7 +301,7 @@ main {
 
           <div class="style-treasures">
             <div class="hour">
-                <span><strong>19:48</strong></span>
+                <span><strong id="hourTreasures">00:00</strong></span>
             </div>
 
             <div class="border-left">
@@ -309,7 +309,7 @@ main {
                     <span  class="style-right"><strong>Tesouros da Palavra de Deus (10 min): </strong></span>
               </div>
               <div class="assignment">
-                    <span>Carlos Andre</span>
+                    <span id="nameTreasures"></span>
               </div>
             </div>
             
@@ -317,7 +317,7 @@ main {
 
           <div class="style-treasures">
             <div class="hour">
-                <span><strong>19:58</strong></span>
+                <span><strong id="hourGems">00:00</strong></span>
             </div>
 
             <div class="border-left">
@@ -325,7 +325,7 @@ main {
                     <span  class="style-right"><strong>Joias espirituais (10 min): </strong></span>
               </div>
               <div class="assignment">
-                    <span>Brendon</span>
+                    <span id="nameGems"></span>
               </div>
             </div>
             
@@ -333,7 +333,7 @@ main {
 
           <div class="style-treasures">
             <div class="hour">
-                <span><strong>20:18</strong></span>
+                <span><strong id="hourReading">00:00</strong></span>
             </div>
 
             <div class="students">
@@ -343,11 +343,11 @@ main {
               <div class="assignment">
                 <div class="container-right">
                   <span><strong>Salão principal: </strong></span>
-                  <span>Tales</span>
+                  <span id="nameReadingMainHall"></span>
                 </div>
                 <div class="container-right">
                   <span><strong>Sala B: </strong></span>
-                  <span>Tiago</span>
+                  <span id="nameReadingHallB"></span>
                 </div>
               </div>
             </div>
@@ -365,23 +365,23 @@ main {
       </div>
       <div class="style-make">
         <div class="hour">
-            <span><strong>20:25</strong></span>
+            <span><strong id="hourMakeDesignation1">00:00</strong></span>
         </div>
 
         <div class="students">
           <div class="assignment">
-                <span><strong>Primeira conversa (3 min):</strong></span>
+                <span><strong id="titleMakeDesignation1"></strong></span>
           </div>
           <div class="assignment">
             <div class="container-right">
               <span><strong>Salão principal: </strong></span>
-              <span>Bianca</span>
-              <span>Leticia</span>
+              <span id="nameMakeDesignation1A"></span>
+              <span id="nameMakeDesignation1A1"></span>
             </div>
             <div class="container-right">
               <span><strong>Sala B: </strong></span>
-              <span>Luzia</span>
-              <span>Alcilene</span>
+              <span id="nameMakeDesignation1B"></span>
+              <span id="nameMakeDesignation1B1"></span>
             </div>
           </div>
         </div>
@@ -392,23 +392,23 @@ main {
 
       <div class="style-make">
         <div class="hour">
-            <span><strong>20:29</strong></span>
+            <span><strong id="hourMakeDesignation2">00:00</strong></span>
         </div>
 
         <div class="students">
           <div class="assignment">
-                <span><strong>Revista (4 min):</strong></span>
+                <span><strong id="titleMakeDesignation2"></strong></span>
           </div>
           <div class="assignment">
             <div class="container-right">
               <span><strong>Salão principal: </strong></span>
-              <span>Bianca</span>
-              <span>Leticia</span>
+              <span id="nameMakeDesignation2A"></span>
+              <span id="nameMakeDesignation2A1"></span>
             </div>
             <div class="container-right">
               <span><strong>Sala B: </strong></span>
-              <span>Luzia</span>
-              <span>Alcilene</span>
+              <span id="nameMakeDesignation2B"></span>
+              <span id="nameMakeDesignation2B1"></span>
             </div>
           </div>
         </div>
@@ -417,23 +417,23 @@ main {
 
       <div class="style-make">
         <div class="hour">
-            <span><strong>20:35</strong></span>
+            <span><strong id="hourMakeDesignation3">00:00</strong></span>
         </div>
 
         <div class="students">
           <div class="assignment">
-                <span><strong>Estudo bíblico (5 min):</strong></span>
+                <span><strong id="titleMakeDesignation3"></strong></span>
           </div>
           <div class="assignment">
             <div class="container-right">
               <span><strong>Salão principal: </strong></span>
-              <span>Bianca</span>
-              <span>Leticia</span>
+              <span id="nameMakeDesignation3A"></span>
+              <span id="nameMakeDesignation3A1"></span>
             </div>
             <div class="container-right">
               <span><strong>Sala B: </strong></span>
-              <span>Luzia</span>
-              <span>Alcilene</span>
+              <span id="nameMakeDesignation3B"></span>
+              <span id="nameMakeDesignation3B1"></span>
             </div>
           </div>
         </div>
@@ -451,62 +451,39 @@ main {
       </div>
       <div class="style-life">
         <div class="hour">
-            <span><strong>20:25</strong></span>
+            <span><strong id="hourLifeDesignation1">00:00</strong></span>
         </div>
 
         <div class="border-left">
           <div class="assignment-life">
-            <span class="style-right"><strong>Torne-se Amigo de Jeová — Prepare Seu Comentário: (5 min)</strong></span>
-            <span class="style-right">Samuel Moreira</span>
+            <span class="style-right"><strong id="titleLifeDesignation1">teste</strong></span>
+            <span class="style-right" id="nameLifeDesignation1">teste</span>
           </div>
         </div>
-        
-        
       </div>
-
-      <div id="add-row-life">
-        <div class="style-life">
-          <div class="hour">
-              <span><strong>20:25</strong></span>
-          </div>
-          <div class="border-left">
-            <div class="assignment-life">
-              <span><strong class="style-right">Realizações da organização: (10 min)</strong></span>
-              <div  class="style-right"><span>Everaldo Moreno</span></div>
-            </div>
-          </div>
-        
-        
-        </div>
+      <div id="add-row-life"></div>
       </div>
-
-
       <div class="style-life">
         <div class="hour">
-            <span><strong>20:25</strong></span>
+            <span><strong id="hourCongStudy">00:00</strong></span>
         </div>
-
         <div class="border-left">
           <div class="assignment-life">
             <span><strong class="style-right">Estudo Bíblico de congregação (30 min)</strong></span>
             <div >
               <span class="style-right"> <strong>Dirigente:</strong></span>
-              <span class="style-right">Natã Dias</span>
+              <span class="style-right" id="leaderCongStudy"></span>
               <span class="style-right" style="padding-top: 10px;"><strong>Leitor: </strong></span>
-              <span class="style-right">Gustavo</span>
+              <span class="style-right" id="readerCongStudy"></span>
             </div>
           </div>
         </div>
-        
-        
       </div>
-
-
       </div>
 
       <div class="start-end-row">
         <div class="container-left">
-          <span><strong>19:35</strong></span>
+          <span><strong id="hourConcludingComments"></strong></span>
         </div>
         <div class="container-right">
           <div>
@@ -516,14 +493,14 @@ main {
       </div>
       <div class="start-end-row">
         <div class="container-left">
-          <span><strong>19:30</strong></span>
+          <span><strong id="hourFinalPrayer"></strong></span>
         </div>
         <div class="container-right">
           <div>
             <span><strong>Cântico final</strong></span>
           </div>
           <div class="prayer">
-            <span><strong>Oração: </strong>Pedro Souza</span>
+            <span><strong>Oração: </strong> <span id="nameFinalPrayer"> </span></span>
           </div>
         </div>
       </div>
